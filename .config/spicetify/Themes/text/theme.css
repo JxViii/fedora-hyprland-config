@@ -1,0 +1,18 @@
+
+* {
+    --accent             : #ea97bb;
+    --accent-active      : #ea97bb;
+    --accent-inactive    : #2a273f;
+    --banner             : #ea97bb;
+    --border-active      : #ea97bb;
+    --border-inactive    : #393552;
+    --header             : #eb6f92;
+    --highlight          : #91588a;
+    --main               : #31251c;
+    --notification       : #3e8fb0;
+    --notification-error : #eb6f92;
+    --subtext            : #908caa;
+    --text               : #f6c9ee;
+}
+
+
