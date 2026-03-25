@@ -39,9 +39,9 @@
     border: none;
     border-radius: 0px;
     font-family: "Jersey 15", sans-serif;
-    font-weight: bold;
+    font-weight: normal;
     min-height: 0;
-    font-size: 20px;
+    font-size: 21px;
     font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
 
