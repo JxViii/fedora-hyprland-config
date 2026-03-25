@@ -5,7 +5,7 @@
 /* Edit these to change the whole theme */
 
 @define-color bar-bg          rgba(0, 0, 0, 0);
-@define-color main-bg         #313244;
+@define-color main-bg         #282828;
 @define-color main-fg         #f2e59a;
 @define-color wb-act-bg       #282828;
 @define-color wb-act-fg       #f2e59a;
@@ -13,7 +13,7 @@
 @define-color wb-hvr-fg       #313244;
 
 /* --- Change this one to change ALL borders at once --- */
-@define-color border          #282828;
+@define-color border          #202020;
 
 @define-color ws-grad-start   #282828;
 @define-color ws-grad-end     #6e6e6e;
@@ -29,7 +29,7 @@
 @define-color menu-color      #f2e59a;
 @define-color audio-color     #f2e59a;
 @define-color tray-color      #f2e59a;
-@define-color tray-bg         #5f0044;
+@define-color tray-bg         #282828;
 @define-color weather-color   #f2e59a;
 @define-color window-color    #f2e59a;
 
@@ -41,7 +41,7 @@
     font-family: "Jersey 15", sans-serif;
     font-weight: bold;
     min-height: 0;
-    font-size: 23.5px;
+    font-size: 20px;
     font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
 
@@ -58,50 +58,6 @@ tooltip {
 }
 
 /* ===================== WORKSPACES & TASKBAR ===================== */
-
-#taskbar button,
-#workspaces button {
-    box-shadow: none;
-    text-shadow: none;
-    padding: 2px;
-    border: 2px;
-    border-color: @border;
-    border-width: 5px;
-    border-radius: 10px;
-    margin-left: 5px;
-    padding-left: 12px;
-    padding-right: 12px;
-    margin-right: 5px;
-    color: @wb-act-fg;
-    background-color: @border;
-    animation: ws_normal 2s ease-in-out 1;
-}
-
-#taskbar button.active,
-#workspaces button.active {
-    background-image: linear-gradient(45deg, @ws-grad-start 50%, @ws-grad-end 50%);
-    color: @wb-act-fg;
-    border-radius: 12px;
-    animation: ws_active 2s ease-in-out 1;
-    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
-#taskbar button:hover,
-#workspaces button:hover {
-    background: @wb-hvr-bg;
-    color: @wb-hvr-fg;
-    animation: ws_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
-}
-
-#workspaces {
-    border-radius: 20px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: @border;
-    padding: 0;
-    margin-right: 5px;
-}
 
 #taskbar {
     padding: 0px;
@@ -184,6 +140,50 @@ tooltip {
     opacity: 1;
     margin: 3px 0px 3px 0px;
     padding: 2px 15px;
+}
+
+#taskbar button,
+#workspaces button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 2px;
+    border: 2px;
+    border-color: @border;
+    border-width: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 5px;
+    color: @wb-act-fg;
+    background-color: @ws-grad-start;
+    animation: ws_normal 2s ease-in-out 1;
+}
+
+#taskbar button.active,
+#workspaces button.active {
+    background-image: linear-gradient(45deg, @ws-grad-start 50%, @ws-grad-end 50%);
+    color: @wb-act-fg;
+    border-radius: 12px;
+    animation: ws_active 2s ease-in-out 1;
+    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+    background: @wb-hvr-bg;
+    color: @wb-hvr-fg;
+    animation: ws_hover 20s ease-in-out 1;
+    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#workspaces {
+    border-radius: 15px;
+    border-width: 2px;
+    border-style: solid;
+    border: none;
+    background: none;
+    margin-right: 5px;
 }
 
 /* ===================== WINDOW TITLE ===================== */

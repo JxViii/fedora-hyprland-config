@@ -26,20 +26,18 @@
 	// "custom/cava_mviz",
 	// "custom/separator#blank",
 	// "custom/playerctl",
-    "network#speed",
 	"hyprland/window",
 	],
 
 "modules-center": [
-	"hyprland/workspaces#rw",
 	// "custom/weather",
-	// "idle_inhibitor",	
-	"custom/hint",	
+	// "idle_inhibitor",
+	"hyprland/workspaces#kanji-rw",	
 	],
 
 "modules-right": [
 	"tray",
-    "group/notify",
+    "custom/swaync",
     "clock",
 	// "group/mobo_drawer",
 	"group/audio",
