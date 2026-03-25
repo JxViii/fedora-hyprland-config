@@ -42,4 +42,3 @@ alias lla='ls -la'
 alias lt='ls --tree'
 
 export PATH=$PATH:/home/jxviii/.spicetify
-alias spotify="spotify --disable-gpu"
