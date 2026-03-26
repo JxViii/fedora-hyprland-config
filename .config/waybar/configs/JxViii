@@ -43,6 +43,7 @@
 	// "group/mobo_drawer",
 	"group/audio",
 	"battery",
+	"backlight",
 	// "custom/nightlight",
 	"group/status",
 	],

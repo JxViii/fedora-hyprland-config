@@ -285,13 +285,9 @@ tooltip * {
 #backlight {
     color: @main-fg;
     border-radius: 12px;
-    border-top-right-radius: 0px;
-    border-bottom-right-radius: 0px;
     border-style: solid;
-    border-right-style: none;
     border-width: 2px;
     border-color: @border;
-    margin-left: 5px;
 }
 
 /* ===================== PULSEAUDIO ===================== */
@@ -395,21 +391,21 @@ tooltip * {
     border-left-width: 0px;
     border-width: 2px;
     border-color: @border;
-    margin-right: 5px;
-    padding-right: 8px;
 }
 
 /* ===================== POWER ===================== */
 
 #custom-power {
+    font-size: 25px;
+    font-weight: bold;
     border-radius: 12px;
     border-style: solid;
     border-left-style: none;
     border-width: 2px;
     border-color: @border;
     padding-left: 0px;
-    padding-right: 5px;
-    margin-right: 5px;
+    padding-right: 0px;
+    margin-right: 0px;
 }
 
 /* ===================== WEATHER ===================== */
