@@ -1,0 +1,434 @@
+/* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
+/* --- JxViii Light - waybar style ---*/
+
+/* ===================== COLOR VARIABLES ===================== */
+
+@define-color bar-bg          rgba(0, 0, 0, 0);
+@define-color main-bg         #092874;
+@define-color main-fg         #ffd6fe;
+@define-color wb-hvr-bg       #ffd6fe;
+@define-color wb-hvr-fg       #092874;
+@define-color border          #092874;
+@define-color ws-grad-start   #092874;
+@define-color ws-grad-end     #754ad0;
+@define-color temp-critical   #ff0000;
+
+/* ===================== BASE ===================== */
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "Jersey 15", sans-serif;
+    font-weight: normal;
+    min-height: 0;
+    font-size: 21px;
+    font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+    /* color: #754ad0;
+    color: #092874;
+    color: #ffd6fe; */
+}
+
+window#waybar {
+    background: @bar-bg;
+    color: @main-fg;
+}
+
+tooltip{
+    background: @main-bg;
+    border-radius: 12px;
+    border-width: 0px;
+}
+
+tooltip * {
+    color: @main-fg;
+}
+
+/* ===================== WORKSPACES & TASKBAR ===================== */
+
+#taskbar {
+    padding: 0px;
+    color: @border;
+}
+
+/* ===================== TRAY MENUS ===================== */
+
+#tray menu * {
+    min-height: 18px;
+}
+
+#tray menu separator {
+    min-height: 16px;
+}
+
+/* ===================== ALL MODULES BASE ===================== */
+
+#backlight,
+#backlight-slider,
+#battery,
+#bluetooth,
+#clock,
+#cpu,
+#disk,
+#idle_inhibitor,
+#keyboard-state,
+#memory,
+#mode,
+#network,
+#power-profiles-daemon,
+#pulseaudio,
+#pulseaudio-slider,
+#taskbar button,
+#taskbar,
+#temperature,
+#tray,
+#window,
+#wireplumber,
+#workspaces,
+#custom-backlight,
+#custom-nightlight,
+#custom-browser,
+#custom-cava_mviz,
+#custom-cycle_wall,
+#custom-dot_update,
+#custom-file_manager,
+#custom-keybinds,
+#custom-keyboard,
+#custom-light_dark,
+#custom-nightlight,
+#custom-lock,
+#custom-hint,
+#custom-hypridle,
+#custom-menu,
+#custom-playerctl,
+#custom-power_vertical,
+#custom-power,
+#custom-quit,
+#custom-reboot,
+#custom-settings,
+#custom-spotify,
+#custom-swaync,
+#custom-tty,
+#custom-updater,
+#custom-hyprpicker,
+#custom-weather,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.default,
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.severe,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.sunnyDay,
+#custom-media,
+#custom-purple_yellow{
+    color: @main-fg;
+    background: @main-bg;
+    opacity: 1;
+    margin: 3px 0px 3px 0px;
+    padding: 2px 15px;
+    border-radius: 10px;
+}
+
+#custom-purple_yellow{
+    margin-right: 5px;
+}
+
+/* ===================== WORKSPACE & TASKBAR BUTTONS ===================== */
+
+#taskbar button,
+#workspaces button {
+    box-shadow: none;
+    text-shadow: none;
+    padding: 2px;
+    border: 2px;
+    border-color: @border;
+    border-width: 5px;
+    border-radius: 10px;
+    margin-left: 5px;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-right: 5px;
+    color: @main-fg;
+    background-color: @ws-grad-start;
+    animation: ws_normal 2s ease-in-out 1;
+    transition: background .5s cubic-bezier(.55,-0.68,.48,1.682), color .5s cubic-bezier(.55,-0.68,.48,1.682);
+}
+
+#taskbar button.active,
+#workspaces button.active {
+    background-image: linear-gradient(45deg, @ws-grad-start 50%, @ws-grad-end 50%);
+    color: @main-fg;
+    border-radius: 12px;
+    animation: ws_active 2s ease-in-out 1;
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+    background: @wb-hvr-bg;
+    color: @wb-hvr-fg;
+}
+
+#workspaces {
+    border-radius: 15px;
+    border-width: 2px;
+    border-style: solid;
+    border: none;
+    background: none;
+    margin-right: 5px;
+}
+
+/* ===================== WINDOW TITLE ===================== */
+
+#window {
+    background-image: linear-gradient(45deg, @ws-grad-start 50%, @ws-grad-end 50%);
+    color: @main-fg;
+    border-radius: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @border;
+    margin-right: 5px;
+    padding: 0px 20px;
+}
+
+/* ===================== CLOCK ===================== */
+
+#clock {
+    color: @main-fg;
+    border-radius: 12px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @border;
+    margin-right: 5px;
+}
+
+/* ===================== IDLE INHIBITOR ===================== */
+
+#idle_inhibitor {
+    color: @main-fg;
+    border-radius: 12px;
+    border-style: solid;
+    border-right-style: none;
+    border-width: 2px;
+    border-color: @border;
+    margin-right: 0px;
+}
+
+#idle_inhibitor.activated {
+    color: @main-fg;
+}
+
+/* ===================== TEMPERATURE ===================== */
+
+#temperature {
+    color: @main-fg;
+    border-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-style: solid;
+    border-right-style: none;
+    border-width: 2px;
+    border-color: @border;
+    margin-left: 5px;
+}
+
+#temperature.critical {
+    background-color: @temp-critical;
+}
+
+/* ===================== ANIMATIONS ===================== */
+
+@keyframes blink {
+    to { color: @main-bg; }
+}
+
+/* ===================== CPU / DISK / MEMORY ===================== */
+
+#cpu,
+#disk,
+#memory {
+    color: @main-fg;
+    border-radius: 0px;
+    border-style: solid;
+    padding: 3px 5px;
+    border-width: 2px;
+    border-color: @border;
+    margin-right: 0px;
+}
+
+/* ===================== MENU ===================== */
+
+#custom-menu {
+    color: @main-fg;
+    border-radius: 6px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: @border;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+/* ===================== NETWORK ===================== */
+
+#network {
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: @border;
+    margin-right: 0px;
+    padding: 3px 20px;
+}
+
+/* ===================== BACKLIGHT ===================== */
+
+#backlight {
+    color: @main-fg;
+    border-radius: 12px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-style: solid;
+    border-right-style: none;
+    border-width: 2px;
+    border-color: @border;
+    margin-left: 5px;
+}
+
+/* ===================== PULSEAUDIO ===================== */
+
+#pulseaudio {
+    color: @main-fg;
+    border-radius: 20px;
+    border-style: solid;
+    border-left-style: none;
+    border-width: 2px;
+    border-color: @border;
+    margin-right: 0px;
+}
+
+#pulseaudio.muted {
+    color: red;
+}
+
+/* ===================== KEYBOARD STATE ===================== */
+
+#keyboard-state {
+    color: @main-fg;
+    border-radius: 20px;
+    border-style: solid;
+    border-left-style: none;
+    border-left-width: 0px;
+    border-width: 2px;
+    border-color: @border;
+    margin-right: 5px;
+}
+
+/* ===================== UPDATER ===================== */
+
+#custom-updater {
+    color: @main-fg;
+    border-radius: 0px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: @border;
+    margin-right: 0px;
+}
+
+/* ===================== HINT ===================== */
+
+#custom-hint {
+    color: @main-fg;
+    border-radius: 10px;
+    border-style: solid;
+    padding: 0 10px;
+    border-left-width: 0px;
+    border-width: 2px;
+    border-color: @border;
+    margin-right: 5px;
+    transition: background .5s ease, color .5s ease;
+}
+
+#custom-hint:hover {
+    background: @main-fg;
+    color: @border;
+}
+
+/* ===================== TRAY ===================== */
+
+#tray {
+    color: @main-fg;
+    font-size: 16px;
+    border-radius: 12px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @main-bg;
+    margin-left: 5px;
+    padding-left: 8px;
+}
+
+#tray > .active,
+#tray > .passive,
+#tray menu {
+    color: @main-fg;
+}
+
+#tray {
+    background: @main-bg;
+}
+
+/* ===================== SWAYNC ===================== */
+
+#custom-swaync {
+    border-radius: 12px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: @border;
+    margin-right: 0px;
+}
+
+/* ===================== BATTERY ===================== */
+
+#battery {
+    border-radius: 20px;
+    border-style: solid;
+    border-left-style: none;
+    border-left-width: 0px;
+    border-width: 2px;
+    border-color: @border;
+    margin-right: 5px;
+    padding-right: 8px;
+}
+
+/* ===================== POWER ===================== */
+
+#custom-power {
+    border-radius: 12px;
+    border-style: solid;
+    border-left-style: none;
+    border-width: 2px;
+    border-color: @border;
+    padding-left: 0px;
+    padding-right: 5px;
+    margin-right: 5px;
+}
+
+/* ===================== WEATHER ===================== */
+
+#custom-weather,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.default,
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.severe,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.sunnyDay {
+    border-radius: 12px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @border;
+    color: @main-fg;
+    margin-right: 5px;
+}

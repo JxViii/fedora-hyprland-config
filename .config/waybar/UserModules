@@ -7,6 +7,13 @@
 
 {
 
+"custom/purple_yellow": {
+	"format": "󰔎",
+	"on-click": "$HOME/.config/hypr/scripts/JxViii-Purple-Light.sh",
+	"tooltip": true,
+	"tooltip-format": "Left Click: Switch Purple-Blue/Light-Yellow Themes",
+},
+
 "hyprland/workspaces#kanji-rw": {
   "disable-scroll": true,
   "all-outputs": true,
@@ -85,7 +92,7 @@
     "class<[Kk]denlive|org.kde.kdenlive>": "🎬 ",
     "title<.*Kdenlive.*>": "🎬 ",
     "title<.*cmus.*>": " ",
-    "class<[Ss]potify>": " ",
+    "class<[Ss]potify>": "󰓇 ",
     "class<Plex>": "󰚺 ",
 
     "class<virt-manager>": " ",

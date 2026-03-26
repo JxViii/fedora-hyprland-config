@@ -1,37 +1,17 @@
 /* ----------- 💫 https://github.com/JaKooLit 💫 -------- */
-/* --- Extra - Neon Circuit - waybar style ---*/
+/* --- JxViii Light - waybar style ---*/
 
 /* ===================== COLOR VARIABLES ===================== */
-/* Edit these to change the whole theme */
 
 @define-color bar-bg          rgba(0, 0, 0, 0);
 @define-color main-bg         #282828;
 @define-color main-fg         #f2e59a;
-@define-color wb-act-bg       #282828;
-@define-color wb-act-fg       #f2e59a;
 @define-color wb-hvr-bg       #f2e59a;
-@define-color wb-hvr-fg       #313244;
-
-/* --- Change this one to change ALL borders at once --- */
+@define-color wb-hvr-fg       #282828;
 @define-color border          #202020;
-
 @define-color ws-grad-start   #282828;
 @define-color ws-grad-end     #6e6e6e;
-
-@define-color clock-color     #f2e59a;
-@define-color idle-color      #f2e59a;
-@define-color idle-active     #f2e59a;
-
-@define-color temp-color      #f2e59a;
 @define-color temp-critical   #ff0000;
-
-@define-color stats-color     #f2e59a;
-@define-color menu-color      #f2e59a;
-@define-color audio-color     #f2e59a;
-@define-color tray-color      #f2e59a;
-@define-color tray-bg         #282828;
-@define-color weather-color   #f2e59a;
-@define-color window-color    #f2e59a;
 
 /* ===================== BASE ===================== */
 
@@ -47,14 +27,17 @@
 
 window#waybar {
     background: @bar-bg;
-    color: @wb-act-fg;
+    color: @main-fg;
 }
 
-tooltip {
+tooltip{
     background: @main-bg;
-    color: @main-fg;
     border-radius: 12px;
     border-width: 0px;
+}
+
+tooltip * {
+    color: @main-fg;
 }
 
 /* ===================== WORKSPACES & TASKBAR ===================== */
@@ -134,13 +117,23 @@ tooltip {
 #custom-weather.severe,
 #custom-weather.showyIcyDay,
 #custom-weather.snowyIcyNight,
-#custom-weather.sunnyDay {
+#custom-weather.sunnyDay,
+#custom-media,
+#custom-purple_yellow{
     color: @main-fg;
     background: @main-bg;
     opacity: 1;
     margin: 3px 0px 3px 0px;
     padding: 2px 15px;
+    border-radius: 10px;
 }
+
+#custom-purple_yellow{
+    margin-right: 5px;
+}
+
+
+/* ===================== WORKSPACE & TASKBAR BUTTONS ===================== */
 
 #taskbar button,
 #workspaces button {
@@ -155,26 +148,24 @@ tooltip {
     padding-left: 12px;
     padding-right: 12px;
     margin-right: 5px;
-    color: @wb-act-fg;
+    color: @main-fg;
     background-color: @ws-grad-start;
     animation: ws_normal 2s ease-in-out 1;
+    transition: background .5s cubic-bezier(.55,-0.68,.48,1.682), color .5s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #taskbar button.active,
 #workspaces button.active {
     background-image: linear-gradient(45deg, @ws-grad-start 50%, @ws-grad-end 50%);
-    color: @wb-act-fg;
+    color: @main-fg;
     border-radius: 12px;
     animation: ws_active 2s ease-in-out 1;
-    transition: all 0.4s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #taskbar button:hover,
 #workspaces button:hover {
     background: @wb-hvr-bg;
     color: @wb-hvr-fg;
-    animation: ws_hover 20s ease-in-out 1;
-    transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #workspaces {
@@ -190,7 +181,7 @@ tooltip {
 
 #window {
     background-image: linear-gradient(45deg, @ws-grad-start 50%, @ws-grad-end 50%);
-    color: @wb-act-fg;
+    color: @main-fg;
     border-radius: 20px;
     border-width: 2px;
     border-style: solid;
@@ -202,9 +193,8 @@ tooltip {
 /* ===================== CLOCK ===================== */
 
 #clock {
-    color: @clock-color;
+    color: @main-fg;
     border-radius: 12px;
-    
     border-width: 2px;
     border-style: solid;
     border-color: @border;
@@ -214,9 +204,8 @@ tooltip {
 /* ===================== IDLE INHIBITOR ===================== */
 
 #idle_inhibitor {
-    color: @idle-color;
+    color: @main-fg;
     border-radius: 12px;
-
     border-style: solid;
     border-right-style: none;
     border-width: 2px;
@@ -225,13 +214,13 @@ tooltip {
 }
 
 #idle_inhibitor.activated {
-    color: @idle-active;
+    color: @main-fg;
 }
 
 /* ===================== TEMPERATURE ===================== */
 
 #temperature {
-    color: @temp-color;
+    color: @main-fg;
     border-radius: 20px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -257,7 +246,7 @@ tooltip {
 #cpu,
 #disk,
 #memory {
-    color: @stats-color;
+    color: @main-fg;
     border-radius: 0px;
     border-style: solid;
     padding: 3px 5px;
@@ -269,9 +258,8 @@ tooltip {
 /* ===================== MENU ===================== */
 
 #custom-menu {
-    color: @menu-color;
+    color: @main-fg;
     border-radius: 6px;
-
     border-style: solid;
     border-width: 2px;
     border-color: @border;
@@ -293,7 +281,7 @@ tooltip {
 /* ===================== BACKLIGHT ===================== */
 
 #backlight {
-    color: @audio-color;
+    color: @main-fg;
     border-radius: 12px;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -307,9 +295,8 @@ tooltip {
 /* ===================== PULSEAUDIO ===================== */
 
 #pulseaudio {
-    color: @audio-color;
+    color: @main-fg;
     border-radius: 20px;
-
     border-style: solid;
     border-left-style: none;
     border-width: 2px;
@@ -324,9 +311,8 @@ tooltip {
 /* ===================== KEYBOARD STATE ===================== */
 
 #keyboard-state {
-    color: @audio-color;
+    color: @main-fg;
     border-radius: 20px;
-
     border-style: solid;
     border-left-style: none;
     border-left-width: 0px;
@@ -338,7 +324,7 @@ tooltip {
 /* ===================== UPDATER ===================== */
 
 #custom-updater {
-    color: @audio-color;
+    color: @main-fg;
     border-radius: 0px;
     border-style: solid;
     border-width: 2px;
@@ -349,7 +335,7 @@ tooltip {
 /* ===================== HINT ===================== */
 
 #custom-hint {
-    color: @audio-color;
+    color: @main-fg;
     border-radius: 10px;
     border-style: solid;
     padding: 0 10px;
@@ -361,20 +347,19 @@ tooltip {
 }
 
 #custom-hint:hover {
-    background: @audio-color;
+    background: @main-fg;
     color: @border;
 }
 
 /* ===================== TRAY ===================== */
 
 #tray {
-    color: @tray-color;
+    color: @main-fg;
     font-size: 16px;
     border-radius: 12px;
-
     border-width: 2px;
     border-style: solid;
-    border-color: @tray-bg;
+    border-color: @main-bg;
     margin-left: 5px;
     padding-left: 8px;
 }
@@ -382,19 +367,17 @@ tooltip {
 #tray > .active,
 #tray > .passive,
 #tray menu {
-    color: @tray-color;
+    color: @main-fg;
 }
 
-
-#tray{
-    background: @tray-bg;
+#tray {
+    background: @main-bg;
 }
 
 /* ===================== SWAYNC ===================== */
 
 #custom-swaync {
     border-radius: 12px;
-    
     border-style: solid;
     border-width: 2px;
     border-color: @border;
@@ -405,7 +388,6 @@ tooltip {
 
 #battery {
     border-radius: 20px;
-
     border-style: solid;
     border-left-style: none;
     border-left-width: 0px;
@@ -419,7 +401,6 @@ tooltip {
 
 #custom-power {
     border-radius: 12px;
-    
     border-style: solid;
     border-left-style: none;
     border-width: 2px;
@@ -443,10 +424,9 @@ tooltip {
 #custom-weather.snowyIcyNight,
 #custom-weather.sunnyDay {
     border-radius: 12px;
-    
     border-width: 2px;
     border-style: solid;
     border-color: @border;
-    color: @weather-color;
+    color: @main-fg;
     margin-right: 5px;
 }

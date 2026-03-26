@@ -286,5 +286,21 @@
 "custom/arrow10": {
 	"format": "",
 	"tooltip": false
+},
+
+"custom/media": {
+	"format": "{icon}{text}",
+	"return-type": "json",
+	"max-length": 45,
+	"format-icons": {
+		"spotify": " ",
+		"default": "",
+		"firefox": " ",
+		"chromium": " ",
+	},
+	"escape": true,
+	"exec": "python $HOME/.config/waybar/scripts/media.py 2> /dev/null",
+	"tooltip": true,
+	"tooltip-format": "Full title: {text}"
 }
 }
