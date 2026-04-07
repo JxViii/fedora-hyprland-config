@@ -128,7 +128,7 @@ while true; do
       -mesg "‼️ **note** ‼️ Enter: Preview || Ctrl+S: Apply &amp; Exit || Esc: Cancel" \
       -config "$ROFI_THEME_FOR_THIS_SCRIPT" \
       -selected-row "$current_selection_index" \
-      -kb-custom-1 "Control+s")
+      -kb-custom-1 "Control+s" 2>/tmp/rofi_theme_selector_debug.log)
 
   rofi_exit_code=$?
 

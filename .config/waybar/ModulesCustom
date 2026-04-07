@@ -178,15 +178,15 @@
 "custom/swaync": {
 	"tooltip": true,
 	"tooltip-format": "Left Click: Launch Notification Center\nRight Click: Do not Disturb",
-	"format": "{} {icon} ",
+	"format": "{icon} ",
 	"format-icons": {
-		"notification": "<span foreground='red'><sup></sup></span>",
+		"notification": "<span></span>",
 		"none": "",
-		"dnd-notification": "<span foreground='red'><sup></sup></span>",
+		"dnd-notification": "<span></span>",
 		"dnd-none": "",
-		"inhibited-notification": "<span foreground='red'><sup></sup></span>",
+		"inhibited-notification": "<span></span>",
 		"inhibited-none": "",
-		"dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+		"dnd-inhibited-notification": "<span></span>",
 		"dnd-inhibited-none": ""
 	},
 	"return-type": "json",
@@ -289,9 +289,9 @@
 },
 
 "custom/media": {
-	"format": "{icon}{text}",
+	"format": "{icon} {text}",
 	"return-type": "json",
-	"max-length": 45,
+	"max-length": 30,
 	"format-icons": {
 		"spotify": " ",
 		"default": "",

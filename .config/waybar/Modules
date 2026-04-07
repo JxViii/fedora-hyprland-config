@@ -374,8 +374,8 @@
 },
 
 "tray": {
-	"icon-size": 25,
-	"spacing": 4,
+	"icon-size": 20,
+	"spacing": 3,
 },
 
 "wireplumber": {
